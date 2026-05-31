@@ -1,26 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kikyou_Stud_Official</title>
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            background: #8b6ccf;
+            position: relative;
         }
-        h1 {
+
+        /* 虛化背景 */
+        .bg {
+            position: fixed;
+            inset: 0;
+            background: url("logo.png") center center no-repeat;
+            background-size: 65vmin;
+            filter: blur(40px);
+            transform: scale(1.4);
+            opacity: 0.45;
+            z-index: -2;
+        }
+
+        /* 紫色疊層 */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(139, 108, 207, 0.75);
+            z-index: -1;
+        }
+
+        .container {
             text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 24px;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .logo {
+            width: 180px;
+            max-width: 45vw;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            line-height: 1.4;
+        }
+
+        h2 {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: rgba(255,255,255,0.75);
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                width: 140px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>The website of <strong>Kikyou_Stud_Official</strong> is building</h1>
+
+    <div class="bg"></div>
+    <div class="overlay"></div>
+
+    <div class="container">
+        <img src="logo.png" alt="Kikyou Stud Logo" class="logo">
+
+        <h1>The website of Kikyou_Stud_Official is building</h1>
+        <h2>桔梗Stud官方網站建設中</h2>
+
+        <div class="subtitle">
+            Coming Soon...
+        </div>
+    </div>
+
 </body>
 </html>
